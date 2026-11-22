@@ -165,6 +165,8 @@ if ($RunOnce) {
 }
 
 $ownsMutex = $false
+$subscriptions = @()
+$watcher = $null
 try {
   $ownsMutex = $TaskMutex.WaitOne(0)
   if (-not $ownsMutex) {
@@ -178,9 +180,9 @@ try {
   $watcher.EnableRaisingEvents = $true
 
   $subscriptions = @(
-    Register-ObjectEvent -InputObject $watcher -EventName Changed -SourceIdentifier 'ProLockerGitAutoSync.Changed',
-    Register-ObjectEvent -InputObject $watcher -EventName Created -SourceIdentifier 'ProLockerGitAutoSync.Created',
-    Register-ObjectEvent -InputObject $watcher -EventName Deleted -SourceIdentifier 'ProLockerGitAutoSync.Deleted',
+    Register-ObjectEvent -InputObject $watcher -EventName Changed -SourceIdentifier 'ProLockerGitAutoSync.Changed';
+    Register-ObjectEvent -InputObject $watcher -EventName Created -SourceIdentifier 'ProLockerGitAutoSync.Created';
+    Register-ObjectEvent -InputObject $watcher -EventName Deleted -SourceIdentifier 'ProLockerGitAutoSync.Deleted';
     Register-ObjectEvent -InputObject $watcher -EventName Renamed -SourceIdentifier 'ProLockerGitAutoSync.Renamed'
   )
 
