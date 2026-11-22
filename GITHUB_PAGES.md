@@ -34,3 +34,4 @@ Après propagation, revenir dans **Settings** → **Pages**, vérifier le domain
 
 - Le fichier `.htaccess` est ignoré par GitHub Pages. Les liens internes du site utilisent déjà les fichiers `.html` et restent donc fonctionnels.
 - GitHub Pages gratuit nécessite normalement un dépôt public. Vérifiez que le dépôt ne contient aucune information confidentielle avant publication.
+- La synchronisation locale ProLocker regroupe les modifications pendant 75 secondes avant de créer un commit ; son journal est stocké hors du projet dans %LOCALAPPDATA%\ProLockerGitAutoSync\sync.log.
