@@ -151,7 +151,11 @@ function Invoke-SafeSync {
 
 function Test-IgnoredWatchPath {
   param([Parameter(Mandatory)][string]$Path)
-  $relative = [System.IO.Path]::GetRelativePath($ProjectPath, $Path).Replace('\', '/')
+  $relative = $Path
+  if ($Path.StartsWith($ProjectPath, [System.StringComparison]::OrdinalIgnoreCase)) {
+    $relative = $Path.Substring($ProjectPath.Length).TrimStart('\', '/')
+  }
+  $relative = $relative.Replace('\', '/')
   return $relative -match '^(?:\.git/|\.prolocker-sync/|~\$)'
 }
 
