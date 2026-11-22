@@ -1,0 +1,11 @@
+RewriteEngine On
+
+RewriteRule ^entreprises/?$ entreprises.html [L]
+RewriteRule ^residences/?$ residences.html [L]
+RewriteRule ^fonctionnement/?$ fonctionnement.html [L]
+RewriteRule ^faq/?$ faq.html [L]
+RewriteRule ^contact/?$ contact.html [L]
+RewriteRule ^mentions-legales/?$ mentions-legales.html [L]
+RewriteRule ^politique-confidentialite/?$ politique-confidentialite.html [L]
+RewriteRule ^cookies/?$ cookies.html [L]
+RewriteRule ^conditions-generales/?$ conditions-generales.html [L]
