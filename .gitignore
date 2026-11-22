@@ -2,15 +2,20 @@
 .env
 .env.*
 !.env.example
+secrets/
+credentials/
 *.pem
 *.key
 *.pfx
 *.p12
+*.secret
+*.token
 
 # Dependencies and generated local files
 node_modules/
 .tmp-headless/
 __github_pages_qa.mjs
+.prolocker-sync/
 
 # Editor and operating-system files
 .vscode/
